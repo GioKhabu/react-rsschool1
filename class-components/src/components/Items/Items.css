@@ -1,0 +1,34 @@
+.items-group {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.item-card {
+    width: 200px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin: 16px;
+  padding: 16px;
+  transition:
+    transform 0.3s,
+    box-shadow 0.3s;
+}
+
+.item-card:hover,
+.item-card:focus {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.item-card h2 {
+  margin-top: 0;
+  color: #333;
+}
+
+.item-card p {
+  margin: 8px 0;
+  color: #666;
+}

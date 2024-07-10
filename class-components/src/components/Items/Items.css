@@ -1,11 +1,11 @@
 .items-group {
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .item-card {
-    width: 200px;
+  width: 200px;
   background-color: #fff;
   border: 1px solid #ccc;
   border-radius: 8px;

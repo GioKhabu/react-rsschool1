@@ -1,8 +1,8 @@
 import { Component } from 'react';
-import { StarState } from '../../interfaces/interfaces';
+import { ItemsProps } from '../../interfaces/interfaces';
 import './Items.css';
 
-class Items extends Component<StarState> {
+class Items extends Component<ItemsProps> {
   render() {
     return (
       <div className="items-group">

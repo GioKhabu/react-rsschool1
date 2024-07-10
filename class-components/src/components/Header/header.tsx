@@ -1,27 +1,19 @@
 import React, { Component } from 'react';
 import './header.css';
+
 interface Props {
-  onSearch: (term: string) => void;
-}
-
-interface State {
   searchTerm: string;
+  onSearch: (term: string) => void;
+  onSearchTermChange: (term: string) => void;
 }
 
-class Header extends Component<Props, State> {
-  constructor(props: Props) {
-    super(props);
-    const savedSearchTerm = localStorage.getItem('searchTerm') || '';
-    this.state = { searchTerm: savedSearchTerm };
-  }
-
+class Header extends Component<Props> {
   handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    this.setState({ searchTerm: event.target.value });
+    this.props.onSearchTermChange(event.target.value);
   };
 
   handleSearch = () => {
-    const trimmedTerm = this.state.searchTerm.trim();
-    localStorage.setItem('searchTerm', trimmedTerm);
+    const trimmedTerm = this.props.searchTerm.trim();
     this.props.onSearch(trimmedTerm);
   };
 
@@ -30,7 +22,7 @@ class Header extends Component<Props, State> {
       <div className="header-wrapper">
         <input
           type="text"
-          value={this.state.searchTerm}
+          value={this.props.searchTerm}
           onChange={this.handleChange}
           placeholder="Search..."
         />

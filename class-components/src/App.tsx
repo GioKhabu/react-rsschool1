@@ -1,13 +1,13 @@
 import { Component } from 'react';
+import './App.css';
+import ErrorBoundary from './components/ErrorBoundary';
 import Header from './components/Header/header';
 import Items from './components/Items/Items';
-import ErrorBoundary from './components/ErrorBoundary';
+import { Item, StarState } from './interfaces/interfaces';
 import { search } from './utils/utils';
-import { StarState, Item } from './interfaces/interfaces';
-import './App.css';
 
-class App extends Component<{}, StarState> {
-  constructor(props: {}) {
+class App extends Component<Record<string, never>, StarState> {
+  constructor(props: Record<string, never>) {
     super(props);
     const savedSearchTerm = localStorage.getItem('searchTerm') || '';
     this.state = { items: [], searchTerm: savedSearchTerm };

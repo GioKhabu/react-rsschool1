@@ -1,8 +1,10 @@
-export const search = async (term: string) => {
+import { ApiItem, ApiResponse, Item } from '../interfaces/interfaces';
+
+export const search = async (term: string): Promise<Item[]> => {
   const response = await fetch(`https://swapi.dev/api/people/?search=${term}`);
-  const data = await response.json();
+  const data: ApiResponse = await response.json();
   console.log(data);
-  return data.results.map((item: any) => ({
+  return data.results.map((item: ApiItem) => ({
     name: item.name,
     birthYear: item.birth_year || '',
     eyeColor: item.eye_color || '',

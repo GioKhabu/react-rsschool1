@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { ItemsProps } from '../../interfaces/interfaces';
 import './Items.css';
 
@@ -17,6 +18,9 @@ const Items: React.FC<ItemsProps> = ({ items }) => {
           {item.mass !== 'unknown' && <p>Mass: {item.mass}</p>}
           {item.eyeColor !== 'unknown' && <p>Eye color: {item.eyeColor}</p>}
           {item.hairColor !== 'unknown' && <p>Hair color: {item.hairColor}</p>}
+          <Link to={`/details/${item.name}`} className="details-link">
+            Details
+          </Link>
         </div>
       ))}
     </div>
